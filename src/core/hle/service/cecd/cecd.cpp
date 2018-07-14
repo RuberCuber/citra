@@ -43,6 +43,13 @@ void Module::Interface::GetChangeStateEventHandle(Kernel::HLERequestContext& ctx
     LOG_WARNING(Service_CECD, "(STUBBED) called");
 }
 
+void OpenAndRead(Service::Interface* self) {
+    u32* cmd_buff = Kernel::GetCommandBuffer();
+
+    cmd_buff[1] = -1;
+    LOG_WARNING(Service_CECD, "(STUBBED) called");
+}
+
 Module::Interface::Interface(std::shared_ptr<Module> cecd, const char* name, u32 max_session)
     : ServiceFramework(name, max_session), cecd(std::move(cecd)) {}
 
